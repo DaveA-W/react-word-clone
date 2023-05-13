@@ -1,6 +1,6 @@
 import React from 'react';
 
-function GuessInput({ addGuess }) {
+function GuessInput({ addGuess, isDisabled }) {
   const [guess, setGuess] = React.useState('');
 
   /** Dynamically checks for invalid characters within user input, and replaces them before setting the current (partial) guess state */
@@ -28,6 +28,7 @@ function GuessInput({ addGuess }) {
         id="guess-input"
         title="5 letter word"
         type="text"
+        disabled={!!isDisabled}
         required={true}
         minLength={5}
         maxLength={5}
